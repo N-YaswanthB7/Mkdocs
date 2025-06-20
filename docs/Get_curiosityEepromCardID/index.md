@@ -1,5 +1,4 @@
-## **🏷️ Title: Card ID Retrieval for Curiosity Card** 
-
+**🏷️ Title: Card ID Retrieval for Curiosity Card**  
 **🆔 Story ID: CUR-132**  
 **👤 Author: Narasapuram Yaswanth**   
 **🗓️ Date: 17-06-2025**
