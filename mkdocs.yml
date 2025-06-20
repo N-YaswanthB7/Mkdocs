@@ -1,4 +1,5 @@
 site_name: Design Documentation
+site_url: https://github.com/N-YaswanthB7/Mkdocs.git
 
 nav:
   - Home: index.md
