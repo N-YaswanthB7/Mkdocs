@@ -8,11 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://github.com/N-YaswanthB7/Mkdocs.git/Get_curiosityEepromCardID/">
+        <link rel="canonical" href="https://github.com/N-YaswanthB7/Mkdocs.git/Getting%20Card%20Details%20From%20EEPROM/">
       
       
+        <link rel="prev" href="../Get_curiosityEepromCardID/">
       
-        <link rel="next" href="../Getting%20Card%20Details%20From%20EEPROM/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Get Curiosity EEPROM Card ID - Design Documentation</title>
+        <title>Retrieving EEPROM Card Details - Design Documentation</title>
       
     
     
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Get Curiosity EEPROM Card ID
+              Retrieving EEPROM Card Details
             
           </span>
         </div>
@@ -227,6 +227,28 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../Get_curiosityEepromCardID/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Get Curiosity EEPROM Card ID
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -242,7 +264,7 @@
   
   
   <span class="md-ellipsis">
-    Get Curiosity EEPROM Card ID
+    Retrieving EEPROM Card Details
     
   </span>
   
@@ -255,7 +277,7 @@
   
   
   <span class="md-ellipsis">
-    Get Curiosity EEPROM Card ID
+    Retrieving EEPROM Card Details
     
   </span>
   
@@ -312,9 +334,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-sequence-flow-for-get_curiosityeepromcardid1" class="md-nav__link">
+  <a href="#5-step-wise-flow" class="md-nav__link">
     <span class="md-ellipsis">
-      🔄 5. Sequence Flow for get_curiosityEepromCardId/1
+      🔄 5. Step-wise Flow
     </span>
   </a>
   
@@ -338,74 +360,10 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#8-impacted-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      📂 8. Impacted Files
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-unit-test-summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧪 9. Unit Test Summary
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧪 9. Unit Test Summary">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#acceptance-test-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      Acceptance Test Cases:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-references" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔗 10. References
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Getting%20Card%20Details%20From%20EEPROM/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Retrieving EEPROM Card Details
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -471,9 +429,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-sequence-flow-for-get_curiosityeepromcardid1" class="md-nav__link">
+  <a href="#5-step-wise-flow" class="md-nav__link">
     <span class="md-ellipsis">
-      🔄 5. Sequence Flow for get_curiosityEepromCardId/1
+      🔄 5. Step-wise Flow
     </span>
   </a>
   
@@ -497,48 +455,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#8-impacted-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      📂 8. Impacted Files
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-unit-test-summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧪 9. Unit Test Summary
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧪 9. Unit Test Summary">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#acceptance-test-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      Acceptance Test Cases:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-references" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔗 10. References
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -555,176 +471,132 @@
 
 
 
-  <h1>Get Curiosity EEPROM Card ID</h1>
+  <h1>Retrieving EEPROM Card Details</h1>
 
-<p><strong>🏷️ Title: Card ID Retrieval for Curiosity Card</strong><br />
-<strong>🆔 Story ID: CUR-132</strong><br />
-<strong>👤 Author: Narasapuram Yaswanth</strong> <br />
-<strong>🗓️ Date: 17-06-2025</strong></p>
+<p><strong>🏷️ Title: Card Details Retrieval for Curiosity from EEPROM</strong><br />
+<strong>👤 Author: Narasapuram Yaswanth</strong><br />
+<strong>🗓️ Date: 19-06-2025</strong></p>
 <hr />
 <h2 id="1-overview">🔍 1. Overview<a class="headerlink" href="#1-overview" title="Permanent link">&para;</a></h2>
 <ul>
-<li>This feature enables retrieval of the unique Card ID from the Curiosity card. This ID is used by the Galaxy application to fetch corresponding card metadata.</li>
+<li>This feature enables retrieval of the Card details from EEPROM for Curiosity card. The retrieved information will be used by the Galaxy application.</li>
 </ul>
 <hr />
 <h2 id="2-scope">📦 2. Scope<a class="headerlink" href="#2-scope" title="Permanent link">&para;</a></h2>
-<p>This feature focuses exclusively on the retrieval of the Card ID for a Curiosity Card. While the Card ID is expected to be stored in the EEPROM, in the current Erlang implementation, it is fetched from an environment variable. The Card ID acts as a critical identifier that enables Galaxy applications to link and retrieve relevant card metadata.</p>
-<p><strong>✅ In Scope</strong></p>
-<ul>
-<li>Reading the 2-byte Card ID from EEPROM using the I2C protocol (In Brief).</li>
-<li>Defining and exposing a new Erlang property <strong><code>curiosityEepromCardID</code></strong> that reads the Card ID from environment variables.</li>
-<li>Handling valid inputs structured as <strong><code>[?INDEX_TUPLE, ?INTERFACE_TUPLE]</code></strong> and returning appropriate output format.</li>
-<li>Implementing input validation and error responses for incorrect or malformed requests.</li>
-</ul>
+<p>This feature focuses on the retrieval of card data stored in the EEPROM of a Curiosity Card. The retrieved information is essential for Galaxy applications to link and access relevant metadata associated with the card.</p>
 <hr />
 <h2 id="3-inputs-and-outputs">🔁 3. Inputs and Outputs<a class="headerlink" href="#3-inputs-and-outputs" title="Permanent link">&para;</a></h2>
 <p><strong>📥 Inputs:</strong></p>
 <ul>
-<li>
-<p>Input to <strong>get_curiosityEepromCardID</strong> property is list of two tuples: <strong><code>[ ?INDEX_TUPLE, ?INTERFACE_TUPLE ]</code></strong></p>
-<ol>
-<li>
-<p>?INDEX_TUPLE -&gt;</p>
-<ul>
-<li><strong><code>{index,[ {node,_Node_number}, {rack, _Rack}, {subrack, _Subrack}, {slot, _Slot} ]}</code></strong></li>
-</ul>
-</li>
-<li>
-<p>?INTERFACE_TUPLE -&gt;</p>
-<ul>
-<li><strong><code>{ interface, List_of_interfaces }</code></strong></li>
-</ul>
-</li>
+<li>Input to <strong>get_card_details_from_eeprom()</strong> function is :<code>&amp;card_details_from_eeprom_return</code> which is a structure variable<ol>
+<li>struct card_details_from_eeprom
+    {
+        unsigned short  card_id;
+        char            card_name[55];
+        char            part_code[65];
+        char            internal_hardware_version[8];
+        char            internal_software_version[8];
+        char            external_hardware_version[8];
+        char            external_software_version[8];
+        unsigned int    card_uid;
+        char            mac_compatible_48_bit_uid[20];
+        unsigned char   m24aa256uid_device_address;
+    };</li>
 </ol>
 </li>
 </ul>
 <p><strong>📤 Outputs:</strong></p>
 <ul>
-<li>Card ID is 2-byte hexadecimal.</li>
-<li>On success the output looks like: <strong><code>[ { success }, [ { Property_name , Card_id_from_eeprom } ] ]</code></strong></li>
+<li>
+<p>The function get_card_details_from_eeprom() returns a status code:</p>
+<ul>
+<li>
+<p><code>SUCCESS</code> (typically defined as 0) if all EEPROM reads and data formatting operations succeed.</p>
+</li>
+<li>
+<p><code>FAILURE</code> (typically defined as -1) if any error occurs during EEPROM probing, reading, or data formatting.</p>
+</li>
 </ul>
-<blockquote>
-<p>Property_name -&gt; <strong>curiosityEepromCardID</strong> and Card_id_from_eeprom -&gt; <strong>0x5C</strong></p>
-</blockquote>
+</li>
+</ul>
 <hr />
 <h2 id="4-design-approach">🛠️ 4. Design Approach<a class="headerlink" href="#4-design-approach" title="Permanent link">&para;</a></h2>
-<p>To enable the Erlang node to access card-related information during system initialization, the card ID is first retrieved from EEPROM at the C layer and made available to the Galaxy application through environment variables present in the <strong><code>vim.args</code></strong> file.</p>
+<p>The <code>start_up.c</code> file retrieves card-related information from EEPROM using the <code>get_card_details_from_eeprom()</code> function, which reads multiple fields from an EEPROM device connected via I2C_BUS_0, and stores the information in the <code>vm.args</code> file.</p>
 <p><strong>Details:</strong></p>
 <ul>
-<li>Added function: <strong><code>get_curiosityEepromCardID()</code></strong> in <strong><code>curiosity_mif.erl</code></strong> module.</li>
-<li>This function calls <strong><code>?COMMON_FUNCTION_LIB:read_environment_variable_value(card_id_from_eeprom)</code></strong> to fetch the Card ID from the environment variables using the <strong><code>card_id_from_eeprom</code></strong> atom.</li>
-<li>The returned value is stored in the <strong><code>Card_id_from_eeprom</code></strong> variable and is used for further validation or processing logic as needed by the application.</li>
+<li>It first probes the EEPROM device address using a shell command (<code>i2cdetect</code>) executed via <code>system()</code>. The exit code stored in <code>eeprom_probe_status</code>. The detected address is then stored in <code>command_error_code</code> using <code>WEXITSTATUS(eeprom_probe_status)</code>.</li>
+<li>Several blocks of memory are read from the EEPROM using <code>read_multiple_bytes_from_m24aa256uid()</code>:<ul>
+<li>Card ID (2 bytes)</li>
+<li>Card Name (54 bytes)</li>
+<li>Part Code (64 bytes)</li>
+<li>Card Version (8 bytes)</li>
 </ul>
-<blockquote>
-<p><strong>Note:</strong> For more details on how card data is read from EEPROM, see<br />
-👉 <a href="../Getting%20Card%20Details%20From%20EEPROM/">Retrieving Card Details from EEPROM</a></p>
-</blockquote>
+</li>
+<li>Versions are formatted into string representations of <code>major.minor</code> versions for internal/external hardware/software.</li>
+<li>The function reads a 4-byte UID and a 6-byte 48-bit unique identification number (EUI-48) for MAC compatibility.</li>
+<li>EUI-48 is validated to be non-zero to confirm a valid EEPROM.</li>
+<li>The MAC address is formatted into a standard colon-separated hex string.</li>
+<li>Any failure during I2C read or formatting causes the function to return <code>FAILURE</code>.</li>
+</ul>
 <hr />
-<h2 id="5-sequence-flow-for-get_curiosityeepromcardid1">🔄 5. Sequence Flow for get_curiosityEepromCardId/1<a class="headerlink" href="#5-sequence-flow-for-get_curiosityeepromcardid1" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p><strong>Input:</strong><br />
-  The function is called with a single argument which is a tuple of the form  </p>
-<blockquote>
-<p><strong><code>[ ?INDEX_TUPLE, ?INTERFACE_TUPLE ]</code></strong></p>
-</blockquote>
-</li>
-<li>
-<p><strong>Property Assignment:</strong><br />
-  The variable <strong><code>Property_name</code></strong> is assigned the atom <strong><code>curiosityEepromCardId</code></strong>.</p>
-</li>
-<li>
-<p><strong>Pattern Matching on <code>?INTERFACE_TUPLE</code>:</strong>  </p>
-<ul>
-<li>The function matches the value of <strong><code>?INTERFACE_TUPLE</code></strong>:</li>
-<li>If it matches <strong><code>{ interface, [0] }</code></strong>:<ul>
-<li>Calls <strong><code>?COMMON_FUNCTION_LIB:read_environment_variable_value(card_id_from_eeprom)</code></strong> to get <strong><code>Card_id_from_eeprom</code></strong>.</li>
-</ul>
-</li>
-<li>Otherwise, if it matches <strong><code>{ interface, _any }</code></strong> (anything other than <strong><code>[0]</code></strong>):<ul>
-<li>Logs an "Invalid Argument" error and returns an error tuple.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Check if <code>Card_id_from_eeprom</code> is an integer:</strong></p>
-<ul>
-<li>If <strong><code>Card_id_from_eeprom</code></strong> <strong>is an integer</strong>:<ul>
-<li>Return <strong><code>[ { success }, [ { curiosityEepromCardId, Card_id_from_eeprom } ] ]</code></strong></li>
-</ul>
-</li>
-<li>If <strong>not an integer</strong>:<ul>
-<li>Prints an error indicating the environment variable is not an integer and returns,<blockquote>
-<p><strong><code>[ { error, card_id_from_environment_variable_is_not_an_integer_value }, [ ] ]</code></strong></p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>If the initial argument does not match the expected tuple structure:</strong>  </p>
-<ul>
-<li>prints an "Invalid Argument" error and returns,<blockquote>
-<p><strong><code>[ { error, invalid_argument }, [ ] ]</code></strong></p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ol>
+<h2 id="5-step-wise-flow">🔄 5. Step-wise Flow<a class="headerlink" href="#5-step-wise-flow" title="Permanent link">&para;</a></h2>
+<p><strong>System Initialization Flow:</strong><br />
+1. Triggered from system initialization.<br />
+2. Executes <code>start_up.c</code>.<br />
+3. Insdie <code>start_up.c</code>, it calls <code>get_card_details_from_eeprom()</code>.</p>
+<p><strong>Inside <code>get_card_details_from_eeprom()</code> Function:</strong><br />
+4. Execute shell command to probe EEPROM I2C device address.<br />
+5. Validate device address.<br />
+6. Then call to <code>read_multiple_bytes_from_m24aa256uid()</code> to:
+    - Read card ID bytes from EEPROM.<br />
+    - Read card name bytes from EEPROM.<br />
+    - Read part code bytes from EEPROM.<br />
+    - Read card version bytes from EEPROM.<br />
+7. Format version numbers into strings.
+8. Then call to <code>read_uid_from_m24aa256uid()</code> to: 
+    - Read card UID bytes from EEPROM.<br />
+9. Then call to <code>read_eui48_from_m24aa256uid()</code> to: 
+    - Read 48-bit EUI-48 bytes from EEPROM.<br />
+10. Validate EUI-48 is non-zero.<br />
+11. Format MAC-compatible 48-bit UID string.<br />
+12. Return <code>SUCCESS</code> if all operations succeed; otherwise <code>FAILURE</code>.</p>
 <hr />
 <h2 id="6-error-handling">🚨 6. Error Handling<a class="headerlink" href="#6-error-handling" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Failure Scenarios in Erlang:<ul>
-<li>If invalid arguments are passed to <strong><code>get_card_details_from_eeprom()</code></strong>, an error message is printed and the function returns:<blockquote>
-<p><strong>[ { error, invalid_argument }, [ ] ]</strong></p>
-</blockquote>
-</li>
-<li>If <strong><code>?INTERFACE_TUPLE</code></strong> is not <strong><code>{interface, [0]}</code></strong>, an error message is printed and the function returns:<blockquote>
-<p><strong>[ { error, invalid_argument }, [ ] ]</strong></p>
-</blockquote>
-</li>
-<li>If the return value from <strong><code>?COMMON_FUNCTION_LIB:read_environment_variable_value(card_id_from_eeprom)</code></strong> is not an integer, an error message is printed and the function returns:<blockquote>
-<p><strong>[ { error, card_id_from_environment_variable_is_not_an_integer_value }, [ ] ]</strong></p>
-</blockquote>
-</li>
+<li>If the EEPROM probe command fails or returns an invalid address, it prints an error message to the console and return <code>FAILURE</code>.</li>
+<li>If any of the EEPROM reads fail, the function returns <code>FAILURE</code>.</li>
+<li>If formatting the version strings or MAC string fails (e.g., <code>sprintf</code> returns an error), it prints an error message to the console and return <code>FAILURE</code>.</li>
+<li>If the EUI-48 read value is all zeros, indicating invalid data, prints an error message to the console and return <code>FAILURE</code>.</li>
 </ul>
-</li>
-</ul>
+<p>These errors ensure the system does not operate on invalid or incomplete card data.</p>
 <hr />
 <h2 id="7-configuration-or-constants">⚙️ 7. Configuration or Constants<a class="headerlink" href="#7-configuration-or-constants" title="Permanent link">&para;</a></h2>
-<ol>
-<li><code>-define CURIOSITY_EEPROM_CARD_ID 92</code></li>
-<li><code>-define CURIOSITY_I2C_BUS_0 0</code></li>
-<li><code>-define CURIOSITY_I2C_BUS_1 1</code></li>
-<li><code>-define COMMON_FUNCTION_LIB galaxy_common_function</code></li>
-</ol>
-<hr />
-<h2 id="8-impacted-files">📂 8. Impacted Files<a class="headerlink" href="#8-impacted-files" title="Permanent link">&para;</a></h2>
+<p><strong>EEPROM memory address constants:</strong></p>
 <ul>
-<li>Modified:<ul>
-<li>start_uo.c</li>
+<li><code>card_id_start_memory_address = 0x0040</code></li>
+<li><code>card_name_start_memory_address = 0x0042</code></li>
+<li><code>card_version_start_memory_address = 0x0078</code></li>
+<li><code>part_code_start_memory_address = 0x0080</code></li>
 </ul>
-</li>
-<li>Added:<ul>
-<li>This property is added in curiosity_mif.erl</li>
-</ul>
-</li>
-</ul>
-<hr />
-<h2 id="9-unit-test-summary">🧪 9. Unit Test Summary<a class="headerlink" href="#9-unit-test-summary" title="Permanent link">&para;</a></h2>
-<h4 id="acceptance-test-cases">Acceptance Test Cases:<a class="headerlink" href="#acceptance-test-cases" title="Permanent link">&para;</a></h4>
+<p><strong>Number of bytes to read for each field:</strong></p>
 <ul>
-<li><code>CUR-1</code> Retrieve EEPROM Card ID with valid interface number.</li>
-<li><code>CUR-2</code> Retrieve EEPROM Card ID with valid interface number.</li>
+<li>Card ID: 2 bytes</li>
+<li>Card Name: 54 bytes</li>
+<li>Card Version: 8 bytes</li>
+<li>Part Code: 64 bytes</li>
+<li>card_uid: 4 bytes</li>
+<li>EEPROM 48-bit EUI (EUI-48): 6 bytes</li>
 </ul>
-<hr />
-<h2 id="10-references">🔗 10. References<a class="headerlink" href="#10-references" title="Permanent link">&para;</a></h2>
+<p><strong>Device address probing range:</strong></p>
 <ul>
-<li>Jira Story CUR-132​</li>
-<li>Commit: a1b2c3d - card_id: add support for ID retrieval​</li>
-<li>I2C Protocol Ref Sheet​ </li>
+<li><code>0x50</code> to <code>0x57</code></li>
+</ul>
+<p><strong>Use of macros:</strong></p>
+<ul>
+<li><code>#define SUCCESS 0</code> and <code>#define FAILURE -1</code> for status returns</li>
+<li><code>#define M24AA256UID_UID_MEMORY_ADDRESS 0x7FFC</code></li>
+<li><code>#define M24AA256UID_EUI48_MEMORY_ADDRESS 0x7F7A</code></li>
+<li><code>IS_SPRINTF_RETURNED_ERROR()</code> for validating <code>sprintf</code> results</li>
 </ul>
 
 
