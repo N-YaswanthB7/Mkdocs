@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Get curiosityEepromCardID - Design Documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Design Documentation</a>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-light">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#title-card-id-retrieval-for-curiosity-card" class="nav-link">🏷️ Title: Card ID Retrieval for Curiosity Card</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#1-overview" class="nav-link">🔍 1. Overview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#2-scope" class="nav-link">📦 2. Scope</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#3-inputs-and-outputs" class="nav-link">🔁 3. Inputs and Outputs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#4-design-approach" class="nav-link">🛠️ 4. Design Approach</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#5-sequence-flow-for-get_curiosityeepromcardid1" class="nav-link">🔄 5. Sequence Flow for get_curiosityEepromCardId/1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#6-error-handling" class="nav-link">🚨 6. Error Handling</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#7-configuration-or-constants" class="nav-link">⚙️ 7. Configuration or Constants</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#8-impacted-files" class="nav-link">📂 8. Impacted Files</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#9-unit-test-summary" class="nav-link">🧪 9. Unit Test Summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#10-references" class="nav-link">🔗 10. References</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="title-card-id-retrieval-for-curiosity-card"><strong>🏷️ Title: Card ID Retrieval for Curiosity Card</strong></h2>
+<p><strong>🆔 Story ID: CUR-132</strong><br />
+<strong>👤 Author: Narasapuram Yaswanth</strong> <br />
+<strong>🗓️ Date: 17-06-2025</strong></p>
+<hr />
+<h2 id="1-overview">🔍 1. Overview</h2>
+<ul>
+<li>This feature enables retrieval of the unique Card ID from the Curiosity card. This ID is used by the Galaxy application to fetch corresponding card metadata.</li>
+</ul>
+<hr />
+<h2 id="2-scope">📦 2. Scope</h2>
+<p>This feature focuses exclusively on the retrieval of the Card ID for a Curiosity Card. While the Card ID is expected to be stored in the EEPROM, in the current Erlang implementation, it is fetched from an environment variable. The Card ID acts as a critical identifier that enables Galaxy applications to link and retrieve relevant card metadata.</p>
+<p><strong>✅ In Scope</strong></p>
+<ul>
+<li>Reading the 2-byte Card ID from EEPROM using the I2C protocol (In Brief).</li>
+<li>Defining and exposing a new Erlang property <strong><code>curiosityEepromCardID</code></strong> that reads the Card ID from environment variables.</li>
+<li>Handling valid inputs structured as <strong><code>[?INDEX_TUPLE, ?INTERFACE_TUPLE]</code></strong> and returning appropriate output format.</li>
+<li>Implementing input validation and error responses for incorrect or malformed requests.</li>
+</ul>
+<hr />
+<h2 id="3-inputs-and-outputs">🔁 3. Inputs and Outputs</h2>
+<p><strong>📥 Inputs:</strong></p>
+<ul>
+<li>
+<p>Input to <strong>get_curiosityEepromCardID</strong> property is list of two tuples: <strong><code>[ ?INDEX_TUPLE, ?INTERFACE_TUPLE ]</code></strong></p>
+<ol>
+<li>
+<p>?INDEX_TUPLE -&gt;</p>
+<ul>
+<li><strong><code>{index,[ {node,_Node_number}, {rack, _Rack}, {subrack, _Subrack}, {slot, _Slot} ]}</code></strong></li>
+</ul>
+</li>
+<li>
+<p>?INTERFACE_TUPLE -&gt;</p>
+<ul>
+<li><strong><code>{ interface, List_of_interfaces }</code></strong></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<p><strong>📤 Outputs:</strong></p>
+<ul>
+<li>Card ID is 2-byte hexadecimal.</li>
+<li>On success the output looks like: <strong><code>[ { success }, [ { Property_name , Card_id_from_eeprom } ] ]</code></strong></li>
+</ul>
+<blockquote>
+<p>Property_name -&gt; <strong>curiosityEepromCardID</strong> and Card_id_from_eeprom -&gt; <strong>0x5C</strong></p>
+</blockquote>
+<hr />
+<h2 id="4-design-approach">🛠️ 4. Design Approach</h2>
+<p>To enable the Erlang node to access card-related information during system initialization, the card ID is first retrieved from EEPROM at the C layer and made available to the Galaxy application through environment variables present in the <strong><code>vim.args</code></strong> file.</p>
+<p><strong>Details:</strong></p>
+<ul>
+<li>Added function: <strong><code>get_curiosityEepromCardID()</code></strong> in <strong><code>curiosity_mif.erl</code></strong> module.</li>
+<li>This function calls <strong><code>?COMMON_FUNCTION_LIB:read_environment_variable_value(card_id_from_eeprom)</code></strong> to fetch the Card ID from the environment variables using the <strong><code>card_id_from_eeprom</code></strong> atom.</li>
+<li>The returned value is stored in the <strong><code>Card_id_from_eeprom</code></strong> variable and is used for further validation or processing logic as needed by the application.</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> If you want a clear explanation of how the card-related information is stored in the EEPROM, go to..<a href="Getting_Card_Deatils_From_EEPROM.md">Retrieving_EEPROM_Card_details</a></p>
+</blockquote>
+<hr />
+<h2 id="5-sequence-flow-for-get_curiosityeepromcardid1">🔄 5. Sequence Flow for get_curiosityEepromCardId/1</h2>
+<ol>
+<li>
+<p><strong>Input:</strong><br />
+  The function is called with a single argument which is a tuple of the form  </p>
+<blockquote>
+<p><strong><code>[ ?INDEX_TUPLE, ?INTERFACE_TUPLE ]</code></strong></p>
+</blockquote>
+</li>
+<li>
+<p><strong>Property Assignment:</strong><br />
+  The variable <strong><code>Property_name</code></strong> is assigned the atom <strong><code>curiosityEepromCardId</code></strong>.</p>
+</li>
+<li>
+<p><strong>Pattern Matching on <code>?INTERFACE_TUPLE</code>:</strong>  </p>
+<ul>
+<li>The function matches the value of <strong><code>?INTERFACE_TUPLE</code></strong>:</li>
+<li>If it matches <strong><code>{ interface, [0] }</code></strong>:<ul>
+<li>Calls <strong><code>?COMMON_FUNCTION_LIB:read_environment_variable_value(card_id_from_eeprom)</code></strong> to get <strong><code>Card_id_from_eeprom</code></strong>.</li>
+</ul>
+</li>
+<li>Otherwise, if it matches <strong><code>{ interface, _any }</code></strong> (anything other than <strong><code>[0]</code></strong>):<ul>
+<li>Logs an "Invalid Argument" error and returns an error tuple.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Check if <code>Card_id_from_eeprom</code> is an integer:</strong></p>
+<ul>
+<li>If <strong><code>Card_id_from_eeprom</code></strong> <strong>is an integer</strong>:<ul>
+<li>Return <strong><code>[ { success }, [ { curiosityEepromCardId, Card_id_from_eeprom } ] ]</code></strong></li>
+</ul>
+</li>
+<li>If <strong>not an integer</strong>:<ul>
+<li>Prints an error indicating the environment variable is not an integer and returns,<blockquote>
+<p><strong><code>[ { error, card_id_from_environment_variable_is_not_an_integer_value }, [ ] ]</code></strong></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>If the initial argument does not match the expected tuple structure:</strong>  </p>
+<ul>
+<li>prints an "Invalid Argument" error and returns,<blockquote>
+<p><strong><code>[ { error, invalid_argument }, [ ] ]</code></strong></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="6-error-handling">🚨 6. Error Handling</h2>
+<ul>
+<li>Failure Scenarios in Erlang:<ul>
+<li>If invalid arguments are passed to <strong><code>get_card_details_from_eeprom()</code></strong>, an error message is printed and the function returns:<blockquote>
+<p><strong>[ { error, invalid_argument }, [ ] ]</strong></p>
+</blockquote>
+</li>
+<li>If <strong><code>?INTERFACE_TUPLE</code></strong> is not <strong><code>{interface, [0]}</code></strong>, an error message is printed and the function returns:<blockquote>
+<p><strong>[ { error, invalid_argument }, [ ] ]</strong></p>
+</blockquote>
+</li>
+<li>If the return value from <strong><code>?COMMON_FUNCTION_LIB:read_environment_variable_value(card_id_from_eeprom)</code></strong> is not an integer, an error message is printed and the function returns:<blockquote>
+<p><strong>[ { error, card_id_from_environment_variable_is_not_an_integer_value }, [ ] ]</strong></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="7-configuration-or-constants">⚙️ 7. Configuration or Constants</h2>
+<ol>
+<li><code>-define CURIOSITY_EEPROM_CARD_ID 92</code></li>
+<li><code>-define CURIOSITY_I2C_BUS_0 0</code></li>
+<li><code>-define CURIOSITY_I2C_BUS_1 1</code></li>
+<li><code>-define COMMON_FUNCTION_LIB galaxy_common_function</code></li>
+</ol>
+<hr />
+<h2 id="8-impacted-files">📂 8. Impacted Files</h2>
+<ul>
+<li>Modified:<ul>
+<li>start_uo.c</li>
+</ul>
+</li>
+<li>Added:<ul>
+<li>This property is added in curiosity_mif.erl</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="9-unit-test-summary">🧪 9. Unit Test Summary</h2>
+<h4 id="acceptance-test-cases">Acceptance Test Cases:</h4>
+<ul>
+<li><code>CUR-1</code> Retrieve EEPROM Card ID with valid interface number.</li>
+<li><code>CUR-2</code> Retrieve EEPROM Card ID with valid interface number.</li>
+</ul>
+<hr />
+<h2 id="10-references">🔗 10. References</h2>
+<ul>
+<li>Jira Story CUR-132​</li>
+<li>Commit: a1b2c3d - card_id: add support for ID retrieval​</li>
+<li>I2C Protocol Ref Sheet​ </li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
