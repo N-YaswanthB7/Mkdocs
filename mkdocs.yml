@@ -1,11 +1,34 @@
 site_name: Design Documentation
 site_url: https://github.com/N-YaswanthB7/Mkdocs.git
 
-nav:
-  - Home: index.md
-  # - Get Curiosity Eeprom Card ID: Get_curiosityEepromCardID.md
-  # - Retrieving EEPROM Card Details: Getting_Card_Details_From_EEPROM.md
-
 docs_dir: docs
-use_directory_urls: true
 
+nav:
+  # - Home: index.md
+  - Get Curiosity EEPROM Card ID: Get_curiosityEepromCardID/index.md
+  - Retrieving EEPROM Card Details: Getting Card Details From EEPROM/index.md
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: 'indigo'
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: 'indigo'
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - tables

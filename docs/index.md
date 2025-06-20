@@ -1,6 +1,11 @@
-# Properties
+Welcome to the Design Documentation site for the Curiosity Card system.
 
-## [Get Curiosity Eeprom Card ID](Get_curiosityEepromCardID/)
-## [Retrieving EEPROM Card Details](Getting_Card_Details_From_EEPROM/)
+Use the navigation on the left to browse detailed documents about:
+
+# Properties: 
+
+- Get Curiosity Eeprom Card ID
+- Getting Card Details From EEPROM
+
 
 
