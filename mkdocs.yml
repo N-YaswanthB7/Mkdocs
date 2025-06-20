@@ -1,0 +1,10 @@
+site_name: Design Documentation
+
+nav:
+  - Home: index.md
+  # - Get Curiosity Eeprom Card ID: Get_curiosityEepromCardID.md
+  # - Retrieving EEPROM Card Details: Getting_Card_Details_From_EEPROM.md
+
+docs_dir: docs
+use_directory_urls: true
+
